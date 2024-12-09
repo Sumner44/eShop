@@ -5,6 +5,21 @@
     "Brand": "Swix",
     "Name": "Aero 4.0",
     "Description": "Very light poles meant for racing",
-    "Price": 109.99
+    "Price": 250.00
   },
-  
+  {
+    "Id": 2,
+    "Type": "Sunglasses",
+    "Brand": "Oakley",
+    "Name": "Jawbreaker",
+    "Description": "Athletic sunglasses meant for bright conditions",
+    "Price": 100.00
+  },
+  {
+    "Id": 3,
+    "Type": "XC skis",
+    "Brand": "Rossignol",
+    "Name": "Xcium",
+    "Description": "Very light race skies for elite racers",
+    "Price": 599.99
+  }

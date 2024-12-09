@@ -40,6 +40,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Pics\swix-triac-4.0-aero-poles.webp" />
+  </ItemGroup>
+
+  <ItemGroup>
     <InternalsVisibleTo Include="Catalog.FunctionalTests" />
   </ItemGroup>
 
