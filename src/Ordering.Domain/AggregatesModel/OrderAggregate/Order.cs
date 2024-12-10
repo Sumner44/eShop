@@ -187,5 +187,6 @@ public class Order
     public decimal GetSalesTax() => GetTotal() * 0.065m;
     // GetGrandTotal calculates the total order amount plus sales tax
     public decimal GetGrandTotal() => GetTotal() + GetSalesTax();
+    //sprint 2
 
 }
