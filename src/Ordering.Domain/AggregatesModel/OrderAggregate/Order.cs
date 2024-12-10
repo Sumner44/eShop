@@ -183,4 +183,9 @@ public class Order
     }
 
     public decimal GetTotal() => _orderItems.Sum(o => o.Units * o.UnitPrice);
+    // GetSalesTax calculates 6.5% of the total order amount
+    public decimal GetSalesTax() => GetTotal() * 0.065m;
+    // GetGrandTotal calculates the total order amount plus sales tax
+    public decimal GetGrandTotal() => GetTotal() + GetSalesTax();
+
 }
