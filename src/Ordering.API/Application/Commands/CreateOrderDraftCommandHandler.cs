@@ -38,7 +38,7 @@ public record OrderDraftDTO
                 Units = oi.Units,
                 ProductName = oi.ProductName
             }),
-            Total = order.GetTotal()
+            Total = order.GetGrandTotal()
         };
     }
 }

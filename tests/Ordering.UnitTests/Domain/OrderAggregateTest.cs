@@ -1,7 +1,9 @@
 ﻿namespace eShop.Ordering.UnitTests.Domain;
 
+using eShop.Ordering.API.Application.Queries;
 using eShop.Ordering.Domain.AggregatesModel.OrderAggregate;
 using eShop.Ordering.UnitTests.Domain;
+using Microsoft.AspNetCore.Routing;
 
 [TestClass]
 public class OrderAggregateTest
@@ -52,9 +54,9 @@ public class OrderAggregateTest
         var discount = 15;
         var pictureUrl = "FakeUrl";
         var units = 1;
-        
+
         //Act - Assert
-        Assert.ThrowsException<OrderingDomainException>(() => new OrderItem(productId, productName, unitPrice, discount, pictureUrl, units));       
+        Assert.ThrowsException<OrderingDomainException>(() => new OrderItem(productId, productName, unitPrice, discount, pictureUrl, units));
     }
 
     [TestMethod]
@@ -175,4 +177,34 @@ public class OrderAggregateTest
         //Assert
         Assert.AreEqual(fakeOrder.DomainEvents.Count, expectedResult);
     }
+
+    [TestMethod]
+    public void GetSalesTax_ShouldReturnCorrectSalesTax()
+    {
+        // Arrange
+        var testorder = new Order();
+
+        var expectedSalesTax = testorder.GetTotal() * 0.065m; // 6.5% of the total amount
+
+        // Act
+        var actualSalesTax = testorder.GetSalesTax();
+
+        // Assert
+        Assert.AreEqual(expectedSalesTax, actualSalesTax, "Sales tax is not calculated correctly.");
+    }
+
+    [TestMethod]
+    public void GetGrandTotal_ShouldReturnTotalPlusSalesTax()
+    {
+        // Arrange
+        var testorder = new Order();
+        var expectedGrandTotal = testorder.GetTotal() + testorder.GetSalesTax();
+
+        // Act
+        var actualGrandTotal = testorder.GetGrandTotal();
+
+        // Assert
+        Assert.AreEqual(expectedGrandTotal, actualGrandTotal, "Grand total is not calculated correctly.");
+    }
+
 }
