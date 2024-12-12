@@ -23,3 +23,28 @@
     "Description": "Very light race skies for elite racers",
     "Price": 599.99
   }
+  {
+    "Id": 4,
+    "Type": "Gloves",
+    "Brand": "Ski GO",
+    "Name": "Race Gloves",
+    "Description": "Light weight gloves for maximum grip and warmth",
+    "Price": 29.99
+  }
+  {
+    "Id": 5,
+    "Type": "Hat",
+    "Brand": "Volcom",
+    "Name": "Beany",
+    "Description": "Warm hat for winter conditions",
+    "Price": 39.99
+  }
+  {
+    "Id": 6,
+    "Type": "Backcountry Skies",
+    "Brand": "Rossignol",
+    "Name": "AT Gear",
+    "Description": "Alpine touring skies meant for backcountry skiing",
+    "Price": 800.00
+  }
+]

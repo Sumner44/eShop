@@ -40,7 +40,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Pics\Backcountry skis for final.webp" />
+    <None Remove="Pics\gloves-for-final-675b3ba381183.webp" />
     <None Remove="Pics\swix-triac-4.0-aero-poles.webp" />
+    <None Remove="Pics\volcom-hat-for-final-675b3b789aeb1.webp" />
   </ItemGroup>
 
   <ItemGroup>

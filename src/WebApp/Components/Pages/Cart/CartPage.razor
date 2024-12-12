@@ -68,7 +68,15 @@
                 </div>
                 <div class="cart-summary-total">
                     <div>Total</div>
-                    <div>$@TotalPrice?.ToString("0.00")</div>
+                    <div>$TotalPrice?.ToString("0.00")</div>
+                </div>
+                <div class="cart-summary-SalesTax">
+                    <div>SalesTax</div>
+                    <div>$SalesTax?.ToString("0.00")</div>
+                </div>
+                <div class="cart-summary-GrandTotal">
+                    <div>GrandTotal</div>
+                    <div>$GrandTotal?.ToString("0.00")</div>
                 </div>
                 <a href="checkout" class="button button-primary">Check out</a>
                 <a href="" class="cart-summary-link">
@@ -98,6 +106,8 @@
 
     private decimal? TotalPrice => basketItems?.Sum(i => i.Quantity * i.UnitPrice);
     private decimal? TotalQuantity => basketItems?.Sum(i => i.Quantity);
+    private decimal? SalesTax => 0.065 * TotalPrice;
+    private decimal? GrandTotal => SalesTax + TotalPrice;
 
     // While an update post is in process, we want to show the pending quantity, not the one
     // that is committed to the cart (otherwise the UI briefly shows the old data)

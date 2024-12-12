@@ -103,12 +103,35 @@
     align-self: stretch;
 }
 
-.cart-summary-total {
+
+.cart-summary-Total {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    align-self: stretch;
+    justify-content: flex-end; /* Align content to the right */
+    align-items: center; /* Align vertically in the center */
+    align-self: stretch; /* Take full width of the container */
+    padding: 1rem 0; /* Optional: Add padding for spacing */
+    font-weight: bold; /* Optional: Make it stand out */
+    font-size: 1.25rem; /* Optional: Adjust font size */
 }
+.cart-summary-Total {
+    display: flex;
+    justify-content: flex-end; /* Align content to the right */
+    align-items: center; /* Align vertically in the center */
+    align-self: stretch; /* Take full width of the container */
+    padding: 1rem 0; /* Optional: Add padding for spacing */
+    font-weight: bold; /* Optional: Make it stand out */
+    font-size: 1.25rem; /* Optional: Adjust font size */
+}
+.cart-summary-Total {
+    display: flex;
+    justify-content: flex-end; /* Align content to the right */
+    align-items: center; /* Align vertically in the center */
+    align-self: stretch; /* Take full width of the container */
+    padding: 1rem 0; /* Optional: Add padding for spacing */
+    font-weight: bold; /* Optional: Make it stand out */
+    font-size: 1.25rem; /* Optional: Adjust font size */
+}
+
 
 .cart-summary .cart-summary-link {
     display: flex;
