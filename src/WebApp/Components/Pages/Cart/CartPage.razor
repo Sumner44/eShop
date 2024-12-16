@@ -106,7 +106,7 @@
 
     private decimal? TotalPrice => basketItems?.Sum(i => i.Quantity * i.UnitPrice);
     private decimal? TotalQuantity => basketItems?.Sum(i => i.Quantity);
-    private decimal? SalesTax => 0.065 * TotalPrice;
+    private decimal? SalesTax => 0.065m * TotalPrice;
     private decimal? GrandTotal => SalesTax + TotalPrice;
 
     // While an update post is in process, we want to show the pending quantity, not the one

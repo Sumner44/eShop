@@ -43,7 +43,7 @@ public class Order
         return order;
     }
 
-    protected Order()
+    public Order()
     {
         _orderItems = new List<OrderItem>();
         _isDraft = false;
