@@ -3,6 +3,7 @@
     "Id": 1,
     "Type": "Triac Poles",
     "Brand": "Swix",
+    "Gender":  "M or F"
     "Name": "Aero 4.0",
     "Description": "Very light poles meant for racing",
     "Price": 250.00
@@ -11,6 +12,7 @@
     "Id": 2,
     "Type": "Sunglasses",
     "Brand": "Oakley",
+    "Gender":  "M or F"
     "Name": "Jawbreaker",
     "Description": "Athletic sunglasses meant for bright conditions",
     "Price": 100.00
@@ -19,6 +21,7 @@
     "Id": 3,
     "Type": "XC skis",
     "Brand": "Rossignol",
+    "Gender" :  "M or F"
     "Name": "Xcium",
     "Description": "Very light race skies for elite racers",
     "Price": 599.99
@@ -27,6 +30,7 @@
     "Id": 4,
     "Type": "Gloves",
     "Brand": "Ski GO",
+    "Gender":  "F"
     "Name": "Race Gloves",
     "Description": "Light weight gloves for maximum grip and warmth",
     "Price": 29.99
@@ -35,6 +39,7 @@
     "Id": 5,
     "Type": "Hat",
     "Brand": "Volcom",
+    "Gender":  "M"
     "Name": "Beany",
     "Description": "Warm hat for winter conditions",
     "Price": 39.99
@@ -43,6 +48,7 @@
     "Id": 6,
     "Type": "Backcountry Skies",
     "Brand": "Rossignol",
+    "Gender":  "M or F"
     "Name": "AT Gear",
     "Description": "Alpine touring skies meant for backcountry skiing",
     "Price": 800.00

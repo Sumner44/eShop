@@ -12,8 +12,9 @@ public class CatalogContext : DbContext
     }
 
     public DbSet<CatalogItem> CatalogItems { get; set; }
-    public DbSet<CatalogBrand> CatalogBrands { get; set; }
+    public DbSet<CatalogGender> CatalogBrands { get; set; }
     public DbSet<CatalogType> CatalogTypes { get; set; }
+    public object CatalogGenders { get; internal set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

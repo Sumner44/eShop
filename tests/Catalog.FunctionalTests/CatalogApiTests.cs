@@ -260,7 +260,7 @@ public sealed class CatalogApiTests : IClassFixture<CatalogApiFixture>
         // Arrange   
         response.EnsureSuccessStatusCode();
         var body = await response.Content.ReadAsStringAsync();
-        var result = JsonSerializer.Deserialize<List<CatalogBrand>>(body, _jsonSerializerOptions);
+        var result = JsonSerializer.Deserialize<List<CatalogGender>>(body, _jsonSerializerOptions);
 
         // Assert       
         Assert.Equal(13, result.Count);

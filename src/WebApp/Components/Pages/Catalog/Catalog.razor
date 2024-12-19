@@ -8,7 +8,7 @@
 <SectionContent SectionName="page-header-subtitle">Start the season with the latest in clothing and equipment.</SectionContent>
 
 <div class="catalog">
-    <CatalogSearch BrandId="@BrandId" ItemTypeId="@ItemTypeId" />
+    <CatalogSearch BrandId="@BrandId" ItemTypeId="@ItemTypeId" ItemGenderID = "@GenderId"/>
 
     @if (catalogResult is null)
     {
@@ -46,6 +46,10 @@
     [SupplyParameterFromQuery(Name = "type")]
     public int? ItemTypeId { get; set; }
 
+
+    [SupplyParameterFromQuery(Name = "Gender")]
+    public int? GenderId { get; set; }
+
     CatalogResult? catalogResult;
 
     static IEnumerable<int> GetVisiblePageIndexes(CatalogResult result)
@@ -56,7 +60,9 @@
         catalogResult = await CatalogService.GetCatalogItems(
             Page.GetValueOrDefault(1) - 1,
             PageSize,
+            GenderId,
             BrandId,
             ItemTypeId);
+          
     }
 }

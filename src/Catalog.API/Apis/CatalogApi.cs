@@ -24,7 +24,7 @@ public static class CatalogApi
         api.MapGet("/items/type/all/brand/{brandId:int?}", GetItemsByBrandId);
         api.MapGet("/catalogtypes", async (CatalogContext context) => await context.CatalogTypes.OrderBy(x => x.Type).ToListAsync());
         api.MapGet("/catalogbrands", async (CatalogContext context) => await context.CatalogBrands.OrderBy(x => x.Brand).ToListAsync());
-
+        api.MapGet("/cataloggenders", async(CatalogContext context) => await context.CatalogGenders.OrderBy(x => x.Gender).ToListAsync());
         // Routes for modifying catalog items.
         api.MapPut("/items", UpdateItem);
         api.MapPost("/items", CreateItem);

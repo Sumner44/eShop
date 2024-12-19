@@ -27,7 +27,7 @@ public partial class CatalogContextSeed(
             var sourceItems = JsonSerializer.Deserialize<CatalogSourceEntry[]>(sourceJson);
 
             context.CatalogBrands.RemoveRange(context.CatalogBrands);
-            await context.CatalogBrands.AddRangeAsync(sourceItems.Select(x => x.Brand).Distinct()
+            await context.CatalogBrands.AddRangeAsync((CatalogGender)sourceItems.Select(x => x.Brand).Distinct()
                 .Select(brandName => new CatalogBrand { Brand = brandName }));
             logger.LogInformation("Seeded catalog with {NumBrands} brands", context.CatalogBrands.Count());
 
@@ -36,10 +36,17 @@ public partial class CatalogContextSeed(
                 .Select(typeName => new CatalogType { Type = typeName }));
             logger.LogInformation("Seeded catalog with {NumTypes} types", context.CatalogTypes.Count());
 
+
+            object value = context.CatalogGenders.RemoveRange(context.CatalogGenders);
+            await context.CatalogGenders.AddRangeAsync(sourceItems.Select(x => x.Gender).Distinct()
+                .Select(GenderName => new CatalogGender { Gender = GenderName }));
+            logger.LogInformation("Seeded catalog with {NumGender} genderss", context.CatalogGender.Count());
+
             await context.SaveChangesAsync();
 
             var brandIdsByName = await context.CatalogBrands.ToDictionaryAsync(x => x.Brand, x => x.Id);
             var typeIdsByName = await context.CatalogTypes.ToDictionaryAsync(x => x.Type, x => x.Id);
+            var genderIdsByName = await context.CatalogGenders.ToDictionaryAsync(x => x.Gender, x => x.Id);
 
             var catalogItems = sourceItems.Select(source => new CatalogItem
             {
@@ -76,6 +83,8 @@ public partial class CatalogContextSeed(
         public int Id { get; set; }
         public string Type { get; set; }
         public string Brand { get; set; }
+
+        public string Gender { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }
